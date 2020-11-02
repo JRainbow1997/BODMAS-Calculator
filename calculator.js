@@ -10,7 +10,7 @@ let toCalculate = [];
 
 const addNumber = (num) => {
     if (display.textContent == "0") {display.textContent = num}
-    else {display.textContent = display.textContent + num};
+    else {display.textContent = display.textContent + num}
     toStore[storeLength] = num;
     storeLength += 1;
 }
@@ -24,13 +24,13 @@ const storeNumber = (symbol) => {
     else if (symbol === "-"){toCalculate[calculateLength] = "-"}
     else if (symbol === "÷"){toCalculate[calculateLength] = "/"}
     else if (symbol === "x"){toCalculate[calculateLength] = "*"}
-    else {toCalculate[calculateLength] = "="};
+    else {toCalculate[calculateLength] = "="}
     calculateLength += 1;
 }
 
 const calculation = () => {
     storeNumber("=");
-    for (i=1; i<toCalculate.length; i++){
+    for (let i=1; i<toCalculate.length; i++){
         if (toCalculate[i] == "*"){
             toCalculate[i-1] *= toCalculate[i+1];
             toCalculate.splice(i, 2);
